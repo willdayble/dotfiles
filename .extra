@@ -1,0 +1,30 @@
+# HISTFILESIZE=10000
+
+alias s="cd ~/Sites"
+export SVN_EDITOR="mate -w"
+#export EDITOR="$HOME/bin/mate -w"
+
+alias mysql=/usr/local/mysql/bin/mysql
+alias mysqladmin=/usr/local/mysql/bin/mysqladmin
+alias slt='open -a "Sublime Text 2" --args --new-window'
+alias ffmpeg="/Applications/ffmpegX.app/Contents/Resources/ffmpeg"
+
+alias te="tail -f /var/log/apache2/error_log"
+
+# git helpers
+# completion
+complete -o default -o nospace -W "$(/usr/bin/env ruby -ne 'puts $_.split(/[,\s]+/)[1..-1].reject{|host| host.match(/\*|\?/)} if $_.match(/^\s*Host\s+/);' < $HOME/.ssh/config)" scp sftp ssh
+
+# aliasey kinda things
+function gstart { git clone --recursive git@bitbucket.org:Squareweave/$@.git ~/Sites/$@; }
+alias gsubup='git submodule --quiet update --init --recursive'
+alias gfixsub='git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull'
+
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/Users/luke/bin:/usr/local/texlive/2010/bin/universal-darwin/"
+
+export PATH="~/bin:$PATH"
+
+##
+# MacPorts Installer addition on 2012-03-21_at_08:54:06: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
