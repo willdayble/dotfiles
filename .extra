@@ -14,7 +14,7 @@ alias te="tail -f /var/log/apache2/error_log"
 # aliasey kinda things
 function gstart { git clone --recursive git@bitbucket.org:Squareweave/$@.git ~/Sites/$@; }
 alias gsubup='git submodule --quiet update --init --recursive'
-alias gfixsub='git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull'
+alias gfixsub='git submodule update --init --recursive && git submodule foreach --recursive git checkout master && git submodule foreach --recursive git pull'
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/texbin:/Users/luke/bin:/usr/local/texlive/2010/bin/universal-darwin/"
 
