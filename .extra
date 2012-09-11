@@ -9,6 +9,8 @@ alias ffmpeg="/Applications/ffmpegX.app/Contents/Resources/ffmpeg"
 
 alias te="tail -f /var/log/apache2/error_log"
 
+function go { subl .; open http://localhost/~`whoami`/`basename \`pwd\``/htdocs; }
+
 # git helpers
 
 # aliasey kinda things
